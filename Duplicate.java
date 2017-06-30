@@ -1,18 +1,22 @@
-package program;
+package guvi;
 import java.util.Scanner;
 public class Duplicate {
-	public static void main(String[] args){
-Scanner sc=new Scanner(System.in);
-String s=sc.next();
-String s1=" ";
-for(int i=0;i<s.length();i++){
-if(s1.contains(s.charAt(i)+"")){
-}
-else{
-	s1+=s.charAt(i);
-}
-}
-System.out.println(s1);
-sc.close();
+public static void main(String[] args){
+	Scanner s=new Scanner(System.in);
+	String str=s.next();
+	int flag=0;
+	for(int i=0;i<str.length();i++){
+		flag=0;
+		for(int j=0;j<str.length();j++){
+			if((str.charAt(i)==str.charAt(j))&&(i!=j)){
+				flag++;
+			}
+			
+		}
+		if(flag==0){
+			System.out.print(str.charAt(i));
+		}
 	}
+	s.close();
+}
 }
